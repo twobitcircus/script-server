@@ -161,7 +161,8 @@ class ProxiedRedirectHandler(tornado.web.RedirectHandler):
 
 class BaseRequestHandler(tornado.web.RequestHandler):
     def set_default_headers(self):
-        self.set_header('X-Frame-Options', 'DENY')
+        if False:
+            self.set_header('X-Frame-Options', 'DENY')
 
     def write_error(self, status_code, **kwargs):
         respond_error(self, status_code, self._reason)
@@ -169,7 +170,8 @@ class BaseRequestHandler(tornado.web.RequestHandler):
 
 class BaseStaticHandler(tornado.web.StaticFileHandler):
     def set_default_headers(self):
-        self.set_header('X-Frame-Options', 'DENY')
+        if False:
+            self.set_header('X-Frame-Options', 'DENY')
 
 
 class GetServerConf(BaseRequestHandler):
